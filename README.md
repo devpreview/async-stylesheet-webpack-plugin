@@ -39,7 +39,7 @@ module.exports = {
 }
 ```
 
-This will generate a file `dist/index.html` containing the following
+This will generate a file `dist/index.html` containing the following:
 
 ```html
 <!DOCTYPE html>
@@ -57,3 +57,27 @@ This will generate a file `dist/index.html` containing the following
 ```
 
 ## Options
+You can pass a hash of configuration options to `async-stylesheet-webpack-plugin`. Allowed values are as follows:
+
+|Name|Type|Default|Description|
+|:--:|:--:|:-----:|:----------|
+|**[`preloadPolyfill`](#)**|`{Boolean}`|`false`|The title to use for the generated HTML document|
+|**[`noscriptFallback`](#)**|`{Boolean}`|`true`|The title to use for the generated HTML document|
+
+Here's an example `webpack` config illustrating how to use these options:
+
+**webpack.config.js**
+```js
+module.exports = {
+  ...
+  
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new ScriptExtHtmlWebpackPlugin({
+      preloadPolyfill: true,
+      noscriptFallback: true
+    }),
+    ...
+  ]
+}
+```
