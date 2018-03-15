@@ -36,7 +36,7 @@ export default class AsyncStylesheetWebpackPlugin {
                 tag.attributes.rel = 'preload';
                 tag.attributes.as = 'style';
                 tag.attributes.onload = tag.attributes.onload ? tag.attributes.onload : '';
-                tag.attributes.onload += "this.rel='stylesheet';";
+                tag.attributes.onload += "this.onload=null;this.rel='stylesheet';";
             }
         }
         if (noscriptTags.length > 0) {
