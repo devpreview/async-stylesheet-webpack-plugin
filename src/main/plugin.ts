@@ -52,18 +52,16 @@ export default class AsyncStylesheetWebpackPlugin {
              * See: https://github.com/filamentgroup/loadCSS#how-to-use-loadcss-recommended-example
              */
             if (this.options.preloadPolyfill) {
+                // @see: https://github.com/webpack/webpack/issues/1554
+                const cssrelpreloadPath = eval("require.resolve('fg-loadcss/dist/cssrelpreload.min.js')");
                 data.head = [{
                     tagName: 'script',
                     attributes: {type: 'text/javascript'},
                     closeTag: true,
-                    innerHTML: fs.readFileSync(
-                        require.resolve('fg-loadcss/dist/cssrelpreload.min.js'),
-                        'utf8'
-                    )
+                    innerHTML: fs.readFileSync(cssrelpreloadPath, 'utf8')
                 }].concat(data.head);
             }
         }
-
         return data;
     }
 
