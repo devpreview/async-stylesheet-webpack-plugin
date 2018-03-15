@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "lts/*"
+
+script:
+  - npm run build
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
