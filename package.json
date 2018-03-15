@@ -3,8 +3,16 @@
   "version": "0.0.5",
   "deprecated": false,
   "license": "MIT",
-  "description": "Asynchronous stylesheets loading",
-  "keywords": [],
+  "description": "Loading stylesheets asynchronously",
+  "keywords": [
+    "async",
+    "stylesheet",
+    "css",
+    "webpack",
+    "plugin",
+    "html-webpack-plugin",
+    "loadcss"
+  ],
   "author": {
     "name": "Alexey Savchuk",
     "email": "sabo@devpreview.ru"
