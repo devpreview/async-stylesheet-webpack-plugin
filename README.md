@@ -6,5 +6,4 @@
 [![peerDependencies Status](https://david-dm.org/devpreview/async-stylesheet-webpack-plugin/peer-status.svg)](https://david-dm.org/devpreview/async-stylesheet-webpack-plugin?type=peer)
 [![npm](https://img.shields.io/npm/dt/async-stylesheet-webpack-plugin.svg)](https://github.com/devpreview/async-stylesheet-webpack-plugin/releases)
 
-# async-stylesheet-webpack-plugin
-Asynchronous stylesheets loading
+# Asynchronous stylesheets loading for [HTML Webpack Plugin](https://webpack.js.org/plugins/html-webpack-plugin/)
