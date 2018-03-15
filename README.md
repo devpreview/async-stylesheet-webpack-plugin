@@ -18,3 +18,43 @@ Referencing CSS stylesheets with `link[rel=stylesheet]` or `@import` causes brow
 ```
 npm install --save-dev style-ext-html-webpack-plugin
 ```
+
+## Usage
+The plugin will generate an HTML5 file for you that includes all your `webpack`
+bundles in the body using `script` tags. Just add the plugin to your `webpack`
+config as follows:
+
+**webpack.config.js**
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AsyncStylesheetWebpackPlugin = require('async-stylesheet-webpack-plugin');
+
+module.exports = {
+  ...
+  
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new ScriptExtHtmlWebpackPlugin(),
+    ...
+  ]
+}
+```
+
+This will generate a file `dist/index.html` containing the following
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <noscript><link href="app.css" rel="stylesheet"></noscript>
+  </head>
+  <body>
+    <script src="app.js"></script>
+  </body>
+</html>
+```
+
+## Options
