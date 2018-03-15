@@ -1,0 +1,33 @@
+{
+  "name": "async-stylesheet-webpack-plugin",
+  "version": "0.0.1",
+  "deprecated": false,
+  "license": "MIT",
+  "description": "Asynchronous stylesheets loading",
+  "keywords": [],
+  "author": {
+    "name": "Alexey Savchuk",
+    "email": "sabo@devpreview.ru"
+  },
+  "homepage": "https://github.com/devpreview/async-stylesheet-webpack-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devpreview/async-stylesheet-webpack-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devpreview/async-stylesheet-webpack-plugin/issues"
+  },
+  "main": "index.js",
+  "scripts": {},
+  "bundleDependencies": false,
+  "dependencies": {
+    "fg-loadcss": "2.0.1"
+  },
+  "devDependencies": {
+    "@types/html-webpack-plugin": "2.30.3",
+    "@types/node": "9.4.7",
+    "@types/webpack": "4.1.0",
+    "typescript": "2.7.2",
+    "webpack": "3.11.0"
+  }
+}

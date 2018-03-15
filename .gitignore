@@ -1,0 +1,6 @@
+# Ignore IDEA project files
+/.idea/
+
+# npm
+/node_modules/
+/package-lock.json
