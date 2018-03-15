@@ -61,8 +61,8 @@ You can pass a hash of configuration options to `async-stylesheet-webpack-plugin
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
-|**[`preloadPolyfill`](#)**|`{Boolean}`|`false`|The title to use for the generated HTML document|
-|**[`noscriptFallback`](#)**|`{Boolean}`|`true`|The title to use for the generated HTML document|
+|**[`preloadPolyfill`](#)**|`{Boolean}`|`false`|If `true` then enabled legacy browser support|
+|**[`noscriptFallback`](#)**|`{Boolean}`|`true`|If `true` then enabled fallback stylesheets loading without `JavaScript`|
 
 Here's an example `webpack` config illustrating how to use these options:
 
@@ -80,4 +80,25 @@ module.exports = {
     ...
   ]
 }
+```
+
+## Preload polyfill (legacy browser support)
+If `preloadPolyfill` option is enabled `async-stylesheet-webpack-plugin` added [cssrelpreload.js](https://github.com/filamentgroup/loadCSS/blob/master/src/cssrelpreload.js) provide [loadCSS](https://github.com/filamentgroup/loadCSS) in HTML header.
+
+This will generate a file `dist/index.html` containing the following:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+    <script type="text/javascript">/* here is the content of the cssrelpreload.js */</script>
+    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <noscript><link href="app.css" rel="stylesheet"></noscript>
+  </head>
+  <body>
+    <script src="app.js"></script>
+  </body>
+</html>
 ```
