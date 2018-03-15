@@ -4,3 +4,7 @@
 # npm
 /node_modules/
 /package-lock.json
+
+# distribution files
+/dist/
+/async-stylesheet-webpack-plugin-*.tgz

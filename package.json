@@ -1,6 +1,6 @@
 {
   "name": "async-stylesheet-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "deprecated": false,
   "license": "MIT",
   "description": "Asynchronous stylesheets loading",
@@ -18,16 +18,34 @@
     "url": "https://github.com/devpreview/async-stylesheet-webpack-plugin/issues"
   },
   "main": "index.js",
-  "scripts": {},
+  "types": "./dist/src/main/plugin.d.ts",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "webpack --config webpack.config.js --progress --profile --bail",
+    "clean": "rimraf -- dist async-stylesheet-webpack-plugin-*.tgz",
+    "clean:all": "npm run clean && rimraf -- node_modules package-lock.json"
+  },
   "bundleDependencies": false,
+  "peerDependencies": {
+    "html-webpack-plugin": "^3.0.0"
+  },
   "dependencies": {
-    "fg-loadcss": "2.0.1"
+    "fg-loadcss": "^2.0.0"
   },
   "devDependencies": {
     "@types/html-webpack-plugin": "2.30.3",
     "@types/node": "9.4.7",
-    "@types/webpack": "4.1.0",
+    "@types/webpack": "3.8.10",
+    "rimraf": "2.6.2",
+    "ts-loader": "3.5.0",
     "typescript": "2.7.2",
-    "webpack": "3.11.0"
-  }
+    "uglifyjs-webpack-plugin": "1.2.3",
+    "webpack": "3.11.0",
+    "webpack-node-externals": "1.6.0"
+  },
+  "files": [
+    "dist/plugin.js",
+    "dist/plugin.js.map",
+    "dist/src/main/plugin.d.ts"
+  ]
 }
