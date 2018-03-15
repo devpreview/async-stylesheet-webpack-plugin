@@ -47,7 +47,7 @@ This will generate a file `dist/index.html` containing the following:
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <link href="app.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <noscript><link href="app.css" rel="stylesheet"></noscript>
   </head>
   <body>
@@ -95,7 +95,7 @@ This will generate a file `dist/index.html` containing the following:
     <meta charset="UTF-8">
     <title>Webpack App</title>
     <script type="text/javascript">/* here is the content of the cssrelpreload.js */</script>
-    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <link href="app.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <noscript><link href="app.css" rel="stylesheet"></noscript>
   </head>
   <body>
@@ -114,7 +114,7 @@ This will generate a file `dist/index.html` containing the following:
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <link href="app.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <noscript><link href="app.css" rel="stylesheet"></noscript>
   </head>
   <body>
@@ -130,7 +130,7 @@ If `noscriptFallback` option is disabled `async-stylesheet-webpack-plugin` only 
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <link href="app.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet';">
   </head>
   <body>
     <script src="app.js"></script>
