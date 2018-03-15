@@ -11,13 +11,13 @@
 ## Why load stylesheets asynchronously?
 Referencing CSS stylesheets with `link[rel=stylesheet]` or `@import` causes browsers to delay page rendering while a stylesheet loads. When loading stylesheets that are not critical to the initial rendering of a page, this blocking behavior is undesirable. The new `<link rel="preload">` standard enables us to load stylesheets asynchronously, without blocking rendering.
 
-* Latest release: https://github.com/devpreview/async-stylesheet-webpack-plugin/releases
-* NPM: https://www.npmjs.com/package/async-stylesheet-webpack-plugin
-
 ## Install via npm
 ```
 npm install --save-dev style-ext-html-webpack-plugin
 ```
+
+* Latest release: https://github.com/devpreview/async-stylesheet-webpack-plugin/releases
+* NPM: https://www.npmjs.com/package/async-stylesheet-webpack-plugin
 
 ## Usage
 The plugin will update all your `webpack` bundles stylesheets in the head using `link` tags with `rel="preload"` attribute.
@@ -141,6 +141,9 @@ If `noscriptFallback` option is disabled `async-stylesheet-webpack-plugin` only 
 ## Credit
 * [loadCSS](https://github.com/filamentgroup/loadCSS) - A function for loading CSS asynchronously;
 * [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) - Simplifies creation of HTML files to serve your webpack bundles.
+
+## See also
+* [Script Extension for HTML Webpack Plugin](https://github.com/numical/script-ext-html-webpack-plugin) - Enhances html-webpack-plugin functionality with different deployment options for your scripts including 'async', 'preload', 'prefetch', 'defer', 'module', custom attributes, and inlining.
 
 ## Need a feature?
 Welcome to [issues](https://github.com/devpreview/async-stylesheet-webpack-plugin/issues)!
