@@ -20,9 +20,8 @@ npm install --save-dev style-ext-html-webpack-plugin
 ```
 
 ## Usage
-The plugin will generate an HTML5 file for you that includes all your `webpack`
-bundles in the body using `script` tags. Just add the plugin to your `webpack`
-config as follows:
+The plugin will update all your `webpack` bundles stylesheets in the head using `link` tags with `rel="preload"` attribute.
+Just add the plugin to your `webpack` config as follows:
 
 **webpack.config.js**
 ```js
