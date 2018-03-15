@@ -17,7 +17,6 @@ const helpers = {
  * Webpack plugins
  */
 const nodeExternals = require('webpack-node-externals');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 /**
  * Webpack configuration
@@ -138,16 +137,7 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
-    plugins: [
-        /**
-         * This plugin uses UglifyJS v3 (uglify-es) to minify your JavaScript.
-         *
-         * See: https://webpack.js.org/plugins/uglifyjs-webpack-plugin/
-         */
-        new UglifyJsPlugin({
-            sourceMap: true
-        })
-    ],
+    plugins: [],
 
     /**
      * Developer tool to enhance debugging
