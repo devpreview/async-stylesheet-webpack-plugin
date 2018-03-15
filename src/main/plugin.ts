@@ -1,4 +1,4 @@
-import { Plugin as WebpackPlugin, Compiler as WebpackCompiler } from "webpack";
+import { Compiler as WebpackCompiler } from "webpack";
 import * as fs from "fs";
 
 export interface AsyncStylesheetWebpackPluginOptions {
@@ -6,7 +6,7 @@ export interface AsyncStylesheetWebpackPluginOptions {
     noscriptFallback?: boolean;
 }
 
-export class AsyncStylesheetWebpackPlugin extends WebpackPlugin {
+export default class AsyncStylesheetWebpackPlugin {
 
     protected options: AsyncStylesheetWebpackPluginOptions = {
         preloadPolyfill: false,
@@ -14,7 +14,6 @@ export class AsyncStylesheetWebpackPlugin extends WebpackPlugin {
     };
 
     public constructor(options: AsyncStylesheetWebpackPluginOptions = {}) {
-        super();
         Object.assign(this.options, options);
     }
 
