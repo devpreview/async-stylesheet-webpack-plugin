@@ -137,3 +137,13 @@ If `noscriptFallback` option is disabled `async-stylesheet-webpack-plugin` only 
   </body>
 </html>
 ```
+
+## Credit
+* [loadCSS](https://github.com/filamentgroup/loadCSS) - A function for loading CSS asynchronously;
+* [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) - Simplifies creation of HTML files to serve your webpack bundles.
+
+## Need a feature?
+Welcome to [issues](https://github.com/devpreview/async-stylesheet-webpack-plugin/issues)!
+
+## To do...
+* Bundles filtering.
