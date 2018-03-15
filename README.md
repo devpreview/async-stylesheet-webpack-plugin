@@ -83,7 +83,7 @@ module.exports = {
 ```
 
 ## Preload polyfill (legacy browser support)
-If `preloadPolyfill` option is enabled `async-stylesheet-webpack-plugin` added [cssrelpreload.js](https://github.com/filamentgroup/loadCSS/blob/master/src/cssrelpreload.js) provide [loadCSS](https://github.com/filamentgroup/loadCSS) in HTML header.
+If `preloadPolyfill` option is enabled `async-stylesheet-webpack-plugin` adding [cssrelpreload.js](https://github.com/filamentgroup/loadCSS/blob/master/src/cssrelpreload.js) provided by [loadCSS](https://github.com/filamentgroup/loadCSS) in HTML header.
 
 This will generate a file `dist/index.html` containing the following:
 
