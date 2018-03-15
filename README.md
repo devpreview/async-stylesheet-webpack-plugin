@@ -105,4 +105,35 @@ This will generate a file `dist/index.html` containing the following:
 ```
 
 ### Without JavaScript
-If `noscriptFallback` option is enabled (this option enabled by default)
+If `noscriptFallback` option is enabled (this option enabled by default) `async-stylesheet-webpack-plugin` adding in HTML `head` `noscript` tag with traditional stylesheet loading.
+
+This will generate a file `dist/index.html` containing the following:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+    <noscript><link href="app.css" rel="stylesheet"></noscript>
+  </head>
+  <body>
+    <script src="app.js"></script>
+  </body>
+</html>
+```
+
+If `noscriptFallback` option is disabled `async-stylesheet-webpack-plugin` only updated `link` tags:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+    <link href="app.css" rel="preload" as="style" onload="this.rel='stylesheet';">
+  </head>
+  <body>
+    <script src="app.js"></script>
+  </body>
+</html>
+```
