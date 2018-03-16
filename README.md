@@ -61,8 +61,8 @@ You can pass a hash of configuration options to `async-stylesheet-webpack-plugin
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
-|**[`preloadPolyfill`](#)**|`{Boolean}`|`false`|If `true` then enabled legacy browser support|
-|**[`noscriptFallback`](#)**|`{Boolean}`|`true`|If `true` then enabled fallback stylesheets loading without `JavaScript`|
+|**[`preloadPolyfill`](#preload-polyfill)**|`{Boolean}`|`false`|If `true` then enabled legacy browser support|
+|**[`noscriptFallback`](#without-javascript)**|`{Boolean}`|`true`|If `true` then enabled fallback stylesheets loading without `JavaScript`|
 
 Here's an example `webpack` config illustrating how to use these options:
 
