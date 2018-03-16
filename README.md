@@ -13,7 +13,7 @@ Referencing CSS stylesheets with `link[rel=stylesheet]` or `@import` causes brow
 
 ## Install via npm
 ```
-npm install --save-dev style-ext-html-webpack-plugin
+npm install --save-dev async-stylesheet-webpack-plugin
 ```
 
 * Latest release: https://github.com/devpreview/async-stylesheet-webpack-plugin/releases
