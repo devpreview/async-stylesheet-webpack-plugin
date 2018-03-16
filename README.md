@@ -33,7 +33,7 @@ module.exports = {
   
   plugins: [
     new HtmlWebpackPlugin(),
-    new ScriptExtHtmlWebpackPlugin(),
+    new AsyncStylesheetWebpackPlugin(),
     ...
   ]
 }
@@ -73,7 +73,7 @@ module.exports = {
   
   plugins: [
     new HtmlWebpackPlugin(),
-    new ScriptExtHtmlWebpackPlugin({
+    new AsyncStylesheetWebpackPlugin({
       preloadPolyfill: true,
       noscriptFallback: true
     }),
