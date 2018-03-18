@@ -143,6 +143,7 @@ If `noscriptFallback` option is disabled `async-stylesheet-webpack-plugin` only 
 * [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) - Simplifies creation of HTML files to serve your webpack bundles.
 
 ## See also
+* [all-chunks-loaded-webpack-plugin](https://github.com/devpreview/all-chunks-loaded-webpack-plugin) - Provide callback executed after all chunks loaded;
 * [Script Extension for HTML Webpack Plugin](https://github.com/numical/script-ext-html-webpack-plugin) - Enhances html-webpack-plugin functionality with different deployment options for your scripts including 'async', 'preload', 'prefetch', 'defer', 'module', custom attributes, and inlining;
 * [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin) - A webpack plugin for injecting <link rel='preload|prefecth'> into HtmlWebpackPlugin pages, with async chunk support.
 
