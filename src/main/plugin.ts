@@ -20,7 +20,7 @@ export default class AsyncStylesheetWebpackPlugin {
     public apply(compiler: WebpackCompiler): void {
         compiler.plugin('compilation', (compilation) => {
             compilation.plugin('html-webpack-plugin-alter-asset-tags', (data: any, next: (err: Error | null, data: any) => void) => {
-                next(null, this.makeStylesheetsAsync(data));
+                return this.makeStylesheetsAsync(data);
             });
         });
     }
