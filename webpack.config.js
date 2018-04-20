@@ -14,11 +14,6 @@ const helpers = {
 };
 
 /**
- * Webpack plugins
- */
-const nodeExternals = require('webpack-node-externals');
-
-/**
  * Webpack configuration
  *
  * See: https://webpack.js.org/configuration/
@@ -44,15 +39,6 @@ module.exports = {
          */
         extensions: ['.ts']
     },
-
-    /**
-     * The externals configuration option provides a way of excluding dependencies
-     * from the output bundles.
-     *
-     * See: https://webpack.js.org/configuration/externals/
-     * See: https://github.com/liady/webpack-node-externals
-     */
-    externals: [nodeExternals()],
 
     /*
      * The entry point for the bundle
