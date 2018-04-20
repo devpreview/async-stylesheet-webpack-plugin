@@ -1,4 +1,4 @@
-import { Compiler as WebpackCompiler, compilation as Compilation } from "webpack";
+import { Compiler as WebpackCompiler } from "webpack";
 import * as fs from "fs";
 
 export interface AsyncStylesheetWebpackPluginOptions {
@@ -18,19 +18,21 @@ export default class AsyncStylesheetWebpackPlugin {
     }
 
     public apply(compiler: WebpackCompiler): void {
-        compiler.plugin('compilation', (compilation) => {
-            compilation.plugin('html-webpack-plugin-alter-asset-tags', (data: any, next: (err: Error | null, data: any) => void) => {
-                return this.makeStylesheetsAsync(data);
+        if (compiler.hooks == undefined) {
+            // Webpack 3
+            compiler.plugin('compilation', (compilation) => {
+                compilation.plugin('html-webpack-plugin-alter-asset-tags', (data: any, next: (err: Error | null, data: any) => void) => {
+                    next(null, this.makeStylesheetsAsync(data));
+                });
             });
-        });
-
-        /*
-        compiler.hooks.compilation.tap("AsyncStylesheetWebpackPlugin", (compilation: Compilation.Compilation) => {
-            compilation.hooks.htmlWebpackPluginAlterAssetTags.tap("AsyncStylesheetWebpackPlugin", (data: any, next: (err: Error | null, data: any) => void) => {
-                return this.makeStylesheetsAsync(data);
+        } else {
+            // Webpack 4
+            compiler.hooks.compilation.tap("AsyncStylesheetWebpackPlugin", (compilation) => {
+                (compilation.hooks as any).htmlWebpackPluginAlterAssetTags.tap("AsyncStylesheetWebpackPlugin", (data: any) => {
+                    return this.makeStylesheetsAsync(data);
+                });
             });
-        });
-        */
+        }
     }
 
     public makeStylesheetsAsync(data: any): any {
