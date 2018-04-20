@@ -1,4 +1,4 @@
-import { Compiler as WebpackCompiler } from "webpack";
+import { Compiler as WebpackCompiler, compilation as Compilation } from "webpack";
 import * as fs from "fs";
 
 export interface AsyncStylesheetWebpackPluginOptions {
@@ -23,6 +23,14 @@ export default class AsyncStylesheetWebpackPlugin {
                 return this.makeStylesheetsAsync(data);
             });
         });
+
+        /*
+        compiler.hooks.compilation.tap("AsyncStylesheetWebpackPlugin", (compilation: Compilation.Compilation) => {
+            compilation.hooks.htmlWebpackPluginAlterAssetTags.tap("AsyncStylesheetWebpackPlugin", (data: any, next: (err: Error | null, data: any) => void) => {
+                return this.makeStylesheetsAsync(data);
+            });
+        });
+        */
     }
 
     public makeStylesheetsAsync(data: any): any {
