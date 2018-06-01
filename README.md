@@ -63,8 +63,8 @@ You can pass a hash of configuration options to `async-stylesheet-webpack-plugin
 |:--:|:--:|:-----:|:----------|
 |**[`preloadPolyfill`](#preload-polyfill)**|`{Boolean}`|`false`|If `true` then enabled legacy browser support|
 |**[`noscriptFallback`](#without-javascript)**|`{Boolean}`|`true`|If `true` then enabled fallback stylesheets loading without `JavaScript`|
-|`chunks`|`{String[]}`|`null`|Allows you to add only some chunks|
-|`excludeChunks`|`{String[]}`|`null`|Allows you to skip some chunks|
+|`chunks`|`{String[]}`|`null`|Allows you to async load only some chunks|
+|`excludeChunks`|`{String[]}`|`null`|Allows you to skip async load some chunks|
 
 Here's an example `webpack` config illustrating how to use these options:
 
