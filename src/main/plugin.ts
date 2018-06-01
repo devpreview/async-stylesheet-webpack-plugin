@@ -4,6 +4,8 @@ import * as fs from "fs";
 export interface AsyncStylesheetWebpackPluginOptions {
     preloadPolyfill?: boolean;
     noscriptFallback?: boolean;
+    chunks?: string[];
+    excludeChunks?: string[];
 }
 
 export default class AsyncStylesheetWebpackPlugin {
@@ -39,6 +41,16 @@ export default class AsyncStylesheetWebpackPlugin {
         let noscriptTags: string[] = [];
         for (let tag of data.head) {
             if (tag.tagName === 'link' && tag.attributes.rel === 'stylesheet') {
+                let chunk = this.getChunk(data.chunks, tag);
+                if (chunk == null) {
+                    continue;
+                }
+                if (this.options.chunks && this.options.chunks.indexOf(chunk) == -1) {
+                    continue;
+                }
+                if (this.options.excludeChunks && this.options.excludeChunks.indexOf(chunk) > -1) {
+                    continue;
+                }
                 let noscriptTagAttrs = Object.keys(tag.attributes).map((attr) => {
                     return attr + '="' + tag.attributes[attr] + '"';
                 }).join(' ');
@@ -73,6 +85,17 @@ export default class AsyncStylesheetWebpackPlugin {
             }
         }
         return data;
+    }
+
+    protected getChunk(chunks: any[], tag: any): string | null {
+        for (let chunk of chunks) {
+            for (let file of chunk.files) {
+                if (tag.attributes && tag.attributes.href && tag.attributes.href.endsWith(file)) {
+                    return chunk.id;
+                }
+            }
+        }
+        return null;
     }
 
 }
