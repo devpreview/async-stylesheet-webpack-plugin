@@ -1,6 +1,6 @@
 {
   "name": "async-stylesheet-webpack-plugin",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "deprecated": false,
   "license": "MIT",
   "description": "Loading stylesheets asynchronously",
